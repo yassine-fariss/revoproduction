@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services | Revo Production</title>
+    <meta name="description"
+        content="Découvrez nos services en production vidéo, photographie, montage et création web à Casablanca.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body
+    class="bg-black text-white font-inter antialiased overflow-x-hidden selection:bg-gold/30 selection:text-gold pt-24 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 bg-black/95 backdrop-blur-md border-b border-white/10 py-2">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-outfit font-bold tracking-wider text-white">REVO<span
+                    class="text-gold">.</span></a>
+
+            <div class="hidden md:flex gap-8 items-center text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-gold transition-colors block" data-i18n="nav_home">Accueil</a>
+
+                <div class="relative group">
+                    <button class="text-gold transition-colors flex items-center gap-1" data-i18n="nav_services">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg pt-2 pb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="portfolio-video.html"
+                            class="block px-4 py-2 hover:text-gold hover:bg-white/5 transition-colors"
+                            data-i18n="service_video">Vidéographie</a>
+                        <a href="portfolio-photo.html"
+                            class="block px-4 py-2 hover:text-gold hover:bg-white/5 transition-colors"
+                            data-i18n="service_photo">Photographie</a>
+                        <a href="portfolio-reels.html"
+                            class="block px-4 py-2 hover:text-gold hover:bg-white/5 transition-colors"
+                            data-i18n="service_reels">Montage & Reels</a>
+                        <a href="portfolio-web.html"
+                            class="block px-4 py-2 hover:text-gold hover:bg-white/5 transition-colors"
+                            data-i18n="service_web">Création Web</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="hover:text-gold transition-colors block" data-i18n="nav_about">À propos</a>
+                <a href="contact.html" class="hover:text-gold transition-colors block"
+                    data-i18n="nav_contact">Contact</a>
+
+                <div class="flex items-center gap-2 ml-4 border-l border-white/20 pl-4">
+                    <button onclick="changeLanguage('fr')" class="hover:text-gold transition-colors text-xs font-bold"
+                        id="lang-fr">FR</button>
+                    <span class="text-white/30 text-xs">|</span>
+                    <button onclick="changeLanguage('en')"
+                        class="hover:text-gold transition-colors text-xs font-bold text-white/50"
+                        id="lang-en">EN</button>
+                    <span class="text-white/30 text-xs">|</span>
+                    <button onclick="changeLanguage('ar')"
+                        class="hover:text-gold transition-colors text-xs font-bold text-white/50"
+                        id="lang-ar">AR</button>
+                </div>
+            </div>
+
+            <button class="md:hidden text-white hover:text-gold transition-colors" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="flex flex-col gap-8 text-2xl font-outfit text-center">
+            <a href="index.html" class="hover:text-gold transition-colors" data-i18n="nav_home">Accueil</a>
+            <a href="services.html" class="text-gold transition-colors" data-i18n="nav_services">Services</a>
+            <a href="about.html" class="hover:text-gold transition-colors" data-i18n="nav_about">À propos</a>
+            <a href="contact.html" class="hover:text-gold transition-colors" data-i18n="nav_contact">Contact</a>
+
+            <div class="flex justify-center gap-4 mt-8">
+                <button onclick="changeLanguage('fr')" class="text-gold" id="lang-fr-m">FR</button>
+                <button onclick="changeLanguage('en')" class="hover:text-gold" id="lang-en-m">EN</button>
+                <button onclick="changeLanguage('ar')" class="hover:text-gold" id="lang-ar-m">AR</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="py-24 relative overflow-hidden text-center z-10">
+        <h1 class="text-5xl md:text-7xl font-outfit font-bold mb-6 fade-up" data-i18n="services_title">Solutions
+            Digitales 360°</h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto fade-up"
+            style="transition-delay: 100ms;"></div>
+    </header>
+
+    <!-- Services Detailed Sections -->
+    <main class="flex-grow">
+
+        <!-- Videography Section -->
+        <section class="py-20 bg-neutral-950 border-t border-white/5 relative overflow-hidden group">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 fade-up relative z-10">
+                    <div
+                        class="w-16 h-16 mb-8 text-gold flex items-center justify-center bg-gold/5 rounded-full border border-gold/30">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-4xl font-outfit font-bold mb-6" data-i18n="service_video">Vidéographie</h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8" data-i18n="service_video_desc">Production
+                        cinématographique, corporate et évènementielle.</p>
+                    <ul class="space-y-4 text-white/60 mb-10">
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Vidéos d'entreprise et
+                            interviews</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Publicités et clips
+                            promotionnels</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Couverture d'événements et
+                            soirées</li>
+                    </ul>
+                    <a href="portfolio-video.html"
+                        class="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest hover:text-white transition-colors">
+                        <span data-i18n="view_portfolio">Voir le portfolio</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 fade-up" style="transition-delay: 200ms;">
+                    <div
+                        class="aspect-video bg-neutral-900 border border-white/10 relative overflow-hidden rounded-sm group-hover:border-gold/50 transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1601506521937-01b4c3e8cd71?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            alt="Videography Setup" loading="lazy">
+                        <div
+                            class="absolute inset-0 border border-gold/0 group-hover:border-gold/30 transition-colors duration-500 m-4 pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography Section (Reversed) -->
+        <section class="py-20 bg-black relative overflow-hidden group">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-16">
+                <div class="w-full md:w-1/2 fade-up relative z-10">
+                    <div
+                        class="w-16 h-16 mb-8 text-gold flex items-center justify-center bg-gold/5 rounded-full border border-gold/30">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-4xl font-outfit font-bold mb-6" data-i18n="service_photo">Photographie</h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8" data-i18n="service_photo_desc">Portraits,
+                        produits, architecture et couverture d\'événements.</p>
+                    <ul class="space-y-4 text-white/60 mb-10">
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Portraits professionnels et
+                            mode</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Photographie culinaire et de
+                            produits</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Architecture et design
+                            d'intérieur</li>
+                    </ul>
+                    <a href="portfolio-photo.html"
+                        class="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest hover:text-white transition-colors">
+                        <span data-i18n="view_portfolio">Voir le portfolio</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 fade-up" style="transition-delay: 200ms;">
+                    <div
+                        class="aspect-video bg-neutral-900 border border-white/10 relative overflow-hidden rounded-sm group-hover:border-gold/50 transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            alt="Photography Camera" loading="lazy">
+                        <div
+                            class="absolute inset-0 border border-gold/0 group-hover:border-gold/30 transition-colors duration-500 m-4 pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reels Section -->
+        <section class="py-20 bg-neutral-950 border-t border-white/5 relative overflow-hidden group">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 fade-up relative z-10">
+                    <div
+                        class="w-16 h-16 mb-8 text-gold flex items-center justify-center bg-gold/5 rounded-full border border-gold/30">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-4xl font-outfit font-bold mb-6" data-i18n="service_reels">Montage & Reels</h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8" data-i18n="service_reels_desc">Formats courts
+                        percutants pour les réseaux sociaux (TikTok, IG).</p>
+                    <ul class="space-y-4 text-white/60 mb-10">
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Montage dynamique pour
+                            TikTok et Reels Instagram</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Étalonnage colorimétrique
+                            (Color Grading)</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Habillage graphique et
+                            Motion Design de base</li>
+                    </ul>
+                    <a href="portfolio-reels.html"
+                        class="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest hover:text-white transition-colors">
+                        <span data-i18n="view_portfolio">Voir le portfolio</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 fade-up" style="transition-delay: 200ms;">
+                    <div
+                        class="aspect-video bg-neutral-900 border border-white/10 relative overflow-hidden rounded-sm group-hover:border-gold/50 transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1558227691-41ea78d1f631?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            alt="Video Editing" loading="lazy">
+                        <div
+                            class="absolute inset-0 border border-gold/0 group-hover:border-gold/30 transition-colors duration-500 m-4 pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Web Design Section (Reversed) -->
+        <section class="py-20 bg-black relative overflow-hidden group border-b border-white/5">
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px] z-0 pointer-events-none">
+            </div>
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-16">
+                <div class="w-full md:w-1/2 fade-up relative z-10">
+                    <div
+                        class="w-16 h-16 mb-8 text-gold flex items-center justify-center bg-gold/5 rounded-full border border-gold/30">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-4xl font-outfit font-bold mb-6" data-i18n="service_web">Création de Sites Web</h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8" data-i18n="service_web_desc">Design UI/UX
+                        premium et développement sur-mesure ultra rapide.</p>
+                    <ul class="space-y-4 text-white/60 mb-10">
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Sites vitrines cinématiques
+                            et portfolios</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Design UI/UX moderne et
+                            responsif</li>
+                        <li class="flex items-start gap-3"><span class="text-gold">●</span> Optimisation SEO et haute
+                            performance Web</li>
+                    </ul>
+                    <a href="portfolio-web.html"
+                        class="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest hover:text-white transition-colors">
+                        <span data-i18n="view_portfolio">Voir le portfolio</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 fade-up" style="transition-delay: 200ms;">
+                    <div
+                        class="aspect-video bg-neutral-900 border border-white/10 relative overflow-hidden rounded-sm group-hover:border-gold/50 transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            alt="Web Development" loading="lazy">
+                        <div
+                            class="absolute inset-0 border border-gold/0 group-hover:border-gold/30 transition-colors duration-500 m-4 pointer-events-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Minimal for inner pages) -->
+    <footer class="bg-black py-8 border-t border-white/5 mt-auto relative z-10">
+        <div
+            class="max-w-7xl mx-auto px-6 text-center text-xs text-white/40 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; <span id="year"></span> Revo Production. Tous droits réservés.</p>
+            <div class="flex gap-4">
+                <a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Accueil</a>
+                <a href="contact.html" class="hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

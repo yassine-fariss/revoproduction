@@ -1,0 +1,16 @@
+{
+  "name": "mohcine-website",
+  "version": "1.0.0",
+  "description": "Revo Production - Agence Digitale & Vidéo",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^6.4.1"
+  }
+}
